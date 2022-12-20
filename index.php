@@ -9,34 +9,31 @@
     <title>酒類介紹網</title>
 </head>
 
-<body class="row">
+<body>
     <?php
     include "./db/db.php";
     $sql = "select * from winery_name";
     $alldate = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     // dd($alldate);
+    // 大標頭部區。
+    include "./layouts/header.php";
     ?>
-    <div class="mt-4 p-5 bg-danger text-white rounded">
-        <h1>威士忌介紹</h1>
-        <p>介紹經典，與近期好酒</p>
-    </div>
-    <div class="dropdown row">
-        <button type="button" class="btn btn-link col"><a href="#">登入</a></button>
-        <button type="button" class="btn btn-link col"><a href="#">討論區</a></button>
-        <button type="button" class="btn btn-link col"><a href="#">投票區</a></button> 
-        <button type="button" class="btn btn-link dropdown-toggle col" data-bs-toggle="dropdown">
-            威士忌品牌
-        </button>
-        <ul class="dropdown-menu">
-            <?php foreach ($alldate as $key => $value) { ?>
-                <li><a class="dropdown-item" href="#"><?= $value['name'] ?></a></li>
-            <?php } ?>
-        </ul>
-    </div>
-    <main class="container">
 
-    </main>
     
+    <main class="container">
+    <?php
+    // 宣告按下去後do帶回來的值。
+    $index_main=$_GET['do'];
+
+    // 判斷$index_main有沒有資料，如果沒有就導回首業。
+    if(isset($index_main)){
+        include "./front/".$index_main.".php";
+    }else{
+        include "./front/main.php";
+    }
+    ?>
+    </main>
+
 
     <?php
     include "./layouts/scrpits.php";
