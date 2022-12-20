@@ -11,9 +11,10 @@ $sql = "select * from user where `user_name`='$user' && `user_password`='$pd'";
 $user_array = $pdo->query($sql)->fetchColumn();
                                 //這是回傳是否有這個數值，有回傳1，沒有回傳0
 dd($user_array);
-if ($user_array==1) {
+if ($user_array>0) {
     echo "if=1";
     $_SESSION['login'] = $user;
+    unset($_SESSION['bad']);
     // header("location:../index.php?do=login");
 } else {
     echo "if=2";
@@ -22,5 +23,5 @@ if ($user_array==1) {
     } else {
         $_SESSION['bad'] +=1;
     }
-    // header("location:../index.php?do=login");
+    // header("location:../index.php?do=admin");
 }

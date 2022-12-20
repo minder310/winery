@@ -20,7 +20,7 @@
     ?>
 
     
-    <main class="container">
+    <main class="container row">
     <?php
     // 宣告按下去後do帶回來的值。
     $index_main=$_GET['do'];

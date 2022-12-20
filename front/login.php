@@ -12,3 +12,8 @@
         <button type="submit">登入</button>
         <button><a href="./index.php?do=new_user">註冊</a></button>
     </form>
+    <?php
+    if(isset($_SESSION['bad'])){
+    ?>
+    <h1>趕快想起帳號吧!你錯了第<?=$_SESSION['bad']?>次</h1>
+    <?php } ?>
