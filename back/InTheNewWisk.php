@@ -6,3 +6,7 @@ $Winery_name=$pdo->query($sql)->fetchColumn();
                                 // 取出單字。
 ?>
 <h1><?=$Winery_name?></h1>
+<form action="" method="get">
+    <label for="" name="name"></label>
+    
+</form>

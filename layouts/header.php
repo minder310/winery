@@ -65,7 +65,7 @@ if (!$_SESSION['login']) {
         </button>
         <ul class="dropdown-menu">
             <?php foreach ($alldate as $key => $value) {?>
-                <li><a class="dropdown-item" href="./index.php?do=show_wisk&wisk=<?=($key+1)?>"><?= $value['name'] ?></a></li>
+                <li><a class="dropdown-item" href="./admin_center.php?do=InTheNewWisk&wisk=<?=($key+1)?>"><?= $value['name'] ?></a></li>
             <?php } ?>
         </ul>
     </div>

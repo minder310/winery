@@ -19,10 +19,20 @@
     include "./layouts/header.php";
     ?>
     <main class="container">
+        <?php
+        // 宣告按下去後do帶回來的值。
+        $index_main = $_GET['do'];
 
-        
+        // 判斷$index_main有沒有資料，如果沒有就導回首業。
+        if (isset($index_main)) {
+            include "./back/" . $index_main . ".php";
+        } else {
+            include "./back/main.php";
+        }
+        ?>
+
     </main>
-<?php
+    <?php
     include "./layouts/scrpits.php";
     ?>
 </body>

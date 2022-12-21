@@ -12,26 +12,28 @@
 <body>
     <?php
     include "./db/db.php";
-    $sql = "select * from winery_name";
-    $alldate = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    // $sql = "select * from winery_name";
+    // $alldate = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     // dd($alldate);
     // 大標頭部區。
     include "./layouts/header.php";
     ?>
 
-    
-    <main class="container row">
-    <?php
-    // 宣告按下去後do帶回來的值。
-    $index_main=$_GET['do'];
 
-    // 判斷$index_main有沒有資料，如果沒有就導回首業。
-    if(isset($index_main)){
-        include "./front/".$index_main.".php";
-    }else{
-        include "./front/main.php";
-    }
-    ?>
+    <main class="container row">
+        <?php
+        // 宣告按下去後do帶回來的值。
+        if (isset($_GET['do'])) {
+            $index_main = $_GET['do'];
+        }
+
+        // 判斷$index_main有沒有資料，如果沒有就導回首業。
+        if (isset($index_main)) {
+            include "./front/" . $index_main . ".php";
+        } else {
+            include "./front/main.php";
+        }
+        ?>
     </main>
 
 
