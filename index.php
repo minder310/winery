@@ -12,8 +12,7 @@
 <body>
     <?php
     include "./db/db.php";
-    // $sql = "select * from winery_name";
-    // $alldate = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+     
     // dd($alldate);
     // 大標頭部區。
     include "./layouts/header.php";
