@@ -6,7 +6,7 @@ $name=$_GET['name'];
 $price=$_GET['price'];
 $cp=$_GET['cp'];
 $flavor=$_GET['flavor'];
-$jpge=$_GET['jpge'];
+// $jpge=$_GET['jpge'];
 $num=InPutWiskName("whisky_name",["winery_id","whiskey_brand","price","cp","flavor","jpge_where"],[$winery_id,$name,$price,$cp,$flavor,$jpge]);
 echo $num;
 ?>
