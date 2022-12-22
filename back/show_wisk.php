@@ -1,14 +1,15 @@
 <!-- 顯示威士忌介紹的網頁 -->
 <?php
-$wisk_num=$_GET['wisk'];
-$sql="select name from winery_name where `id`='$wisk_num'";
-$Winery_name=$pdo->query($sql)->fetchColumn();
-                                // 取出單字。
+// $wisk_num=$_GET['wisk'];
+// $sql="select name from winery_name where `id`='$wisk_num'";
+// $Winery_name=$pdo->query($sql)->fetchColumn();
+//                                 // 取出單字。
 ?>
-<h1><?=$Winery_name?></h1>
+<!-- <h1><?=$Winery_name?></h1> -->
 <?php
-$sql=ReadToTable("*","whisky_name","winery_id=$wisk_num");
-$ReadSql=ToSql($sql);
-dd($ReadSql);
+// $sql=ReadToTable("*","whisky_name","winery_id=$wisk_num");
+// $ReadSql=ToSql($sql);
+// dd($ReadSql);
 
 ?>
+<img style="width: 500px;" src="./upimg/20221222225727.jpg" alt="">

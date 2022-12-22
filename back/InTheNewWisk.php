@@ -1,6 +1,6 @@
 <!-- 顯示威士忌介紹的網頁 -->
 <h1>威士忌輸入區</h1>
-<form action="./api/wisk_name_api.php" method="get" enctype="multipart/form-data">
+<form action="./api/wisk_name_api.php" method="post" enctype="multipart/form-data">
     <!-- 隱藏輸入酒廠的數據。 -->
     <label for="">請選擇酒廠</label>
     <!-- 測試區 -->
@@ -23,7 +23,8 @@
         <label for="">評價<textarea name="flavor" id=""></textarea></label>
     </div>
     <div>
-        <label for="">檔名<input type="text" name="name"></label>
+        <!-- 如果有上傳圖片，一定使用post，因為get沒有辦法傳陣列檔。 -->
+        <label for="">上傳圖片</label>
         <input type="file" name="img">
     </div>
     <button type="submit">寫入</button>
