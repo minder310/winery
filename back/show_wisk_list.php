@@ -14,6 +14,6 @@ dd($ReadSql);
 <ul class="list-group">
   <li class="list-group-item active">酒名</li>
   <?php foreach($ReadSql as $key => $vaule){?>
-  <a href="#"><li class="list-group-item"><?=$vaule['whiskey_brand']?></li></a>
+  <a href="./admin_center.php?do=show_wisk&wisk=<?=$vaule['id']?>"><li class="list-group-item"><?=$vaule['whiskey_brand']?></li></a>
   <?php }?>
 </ul>

@@ -7,9 +7,18 @@
 ?>
 <!-- <h1><?=$Winery_name?></h1> -->
 <?php
-// $sql=ReadToTable("*","whisky_name","winery_id=$wisk_num");
-// $ReadSql=ToSql($sql);
-// dd($ReadSql);
 
+// 測試取資料地區。
+    $indo=$_GET['wisk'];
+    
+// 測試取資料區結束。
+ $sql=ReadToTable("*","whisky_name","id=$indo");
+ $ReadSql=ToSql($sql);
+ dd($ReadSql);
 ?>
-<img style="width: 500px;" src="./upimg/20221222225727.jpg" alt="">
+<h1><?=$ReadSql[0]['whiskey_brand']?></h1>
+<h3>價格:<?=$ReadSql[0]['price']?></h3>
+<img style="width: 500px;" src="./upimg/<?=$ReadSql[0]['jpge_where']?>" alt="酒徒">
+<p>
+    <?=$ReadSql[0]['flavor']?>
+</p>
