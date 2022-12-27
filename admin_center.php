@@ -12,6 +12,11 @@
 <body>
     <?php
     include "./db/db.php";
+    // 貪婪之島驅逐區，要是沒有念舊回地球去吧。
+    if(!isset($_SESSION['login'])){
+        header("location:index.php");
+    };
+    // 驅逐結束。
     $sql = "select * from winery_name";
     $alldate = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     // dd($alldate);
@@ -21,14 +26,16 @@
     <main class="container">
         <?php
         // 宣告按下去後do帶回來的值。
+        if(isset($_GET['do'])){
         $index_main = $_GET['do'];
+        }
 
         // 判斷$index_main有沒有資料，如果沒有就導回首業。
         if (isset($index_main)) {
             include "./back/" . $index_main . ".php";
         } else {
             include "./back/main.php";
-        }
+        };
         ?>
 
     </main>

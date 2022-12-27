@@ -15,7 +15,8 @@ if ($user_array>0) {
     echo "if=1";
     $_SESSION['login'] = $user;
     unset($_SESSION['bad']);
-    // header("location:../index.php?do=login");
+    echo $_SESSION['login'];
+    header("location:../admin_center.php?do=login");
 } else {
     echo "if=2";
     if (!isset($_SESSION['bad'])) {
