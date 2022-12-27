@@ -58,7 +58,7 @@ if (!$_SESSION['login']) {
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="./admin_center.php">回首頁</a></button>
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="./logout.php">登出</a></button>
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="#">討論區</a></button>
-        <button type="button" class="btn btn-link col col-sm-2 "><a  href="./admin_center.php?do=polling">投票區</a></button>
+        <button type="button" class="btn btn-link col col-sm-2 "><a  href="./admin_center.php?do=polling_new">投票區</a></button>
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="#">投票區</a></button>
         <button type="button" class="btn btn-link dropdown-toggle col col-sm-2 " data-bs-toggle="dropdown">
             威士忌品牌
