@@ -12,7 +12,10 @@ if($_FILES['img']['error']==0){
     $files=explode(".",$_FILES['img']['name']);
     $files_end=end($files);
     echo "end";
-    $files_name=$postkey['jpge_where'].".".$files_end;
+    $files_name=$postkey['jpge_where'];
+    $files_name_explod=explode('.',$files_name);
+    $files_name=reset($files_name_explod);
+    $files_name=$files_name.".".$files_end;
     $_FILES['img']['name']=$files_name;
     move_uploaded_file($_FILES['img']['tmp_name'],"../upimg/".$files_name);
 }

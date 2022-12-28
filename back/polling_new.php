@@ -11,7 +11,7 @@
         <label for="">關閉</label>
         <input type="radio" name="on_off" id="">
     </div>
-    <div>
+    <div class="opt-div">
         <label for="">選項</label>
         <input type="text" name="opt[]">
     </div>
@@ -24,14 +24,17 @@
 
 <script>
     $(function(){
-        const inputs = $('input[name=opt]');
-        const div = $('div');
+        // 綁定div。
+        const div = $('.opt-div');
+        // 綁定啟動按鍵
         const but = $('button[name=newinput]')
+        // 顯示出綁定的div的內容。
         console.log ('div',div);
-        console.log ('input',inputs)
-        const inpClone=inputs.clone();
+        // 複製物件，不放在function
+        const inpClone=div.clone();
         but.click(function(){
-            inpClone.insertAfter(input[name=opt]);
+            // 前面是獎物件貼到哪邊。
+            inpClone.appendTo('.opt-div');
         })
     })
 </script>
