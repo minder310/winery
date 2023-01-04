@@ -28,11 +28,14 @@
         // 宣告按下去後do帶回來的值。
         if(isset($_GET['do'])){
         $index_main = $_GET['do'];
+        }else{
+        $index_main = "main";
         }
+        $file="./back/" . $index_main . ".php";
 
         // 判斷$index_main有沒有資料，如果沒有就導回首業。
-        if (isset($index_main)) {
-            include "./back/" . $index_main . ".php";
+        if (file_exists($file)) {
+            include $file;
         } else {
             include "./back/main.php";
         };
