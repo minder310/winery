@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-12-23 09:20:13
--- 伺服器版本： 10.4.24-MariaDB
--- PHP 版本： 8.1.6
+-- 產生時間： 2023-01-04 17:23:11
+-- 伺服器版本： 10.4.27-MariaDB
+-- PHP 版本： 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,15 +24,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `poling`
+--
+
+CREATE TABLE `poling` (
+  `id` int(10) NOT NULL,
+  `poling_name` varchar(50) NOT NULL,
+  `new_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `over_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `no_off` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `poling_option`
+--
+
+CREATE TABLE `poling_option` (
+  `id` int(10) NOT NULL,
+  `poling_id` int(10) NOT NULL,
+  `option_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `user`
 --
 
 CREATE TABLE `user` (
   `id` int(10) NOT NULL,
-  `user_name` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `user_password` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `name` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `user_name` varchar(10) NOT NULL,
+  `user_password` varchar(10) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `name` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -52,11 +78,11 @@ INSERT INTO `user` (`id`, `user_name`, `user_password`, `email`, `name`) VALUES
 CREATE TABLE `whisky_name` (
   `id` int(10) NOT NULL COMMENT '編號',
   `winery_id` int(10) NOT NULL COMMENT '酒廠編號',
-  `whiskey_brand` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL COMMENT '酒名',
+  `whiskey_brand` varchar(20) NOT NULL COMMENT '酒名',
   `price` int(20) NOT NULL COMMENT '價格',
-  `cp` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL COMMENT 'cp值',
-  `flavor` text COLLATE utf8mb4_unicode_520_ci NOT NULL COMMENT '風味評價',
-  `jpge_where` varchar(30) COLLATE utf8mb4_unicode_520_ci NOT NULL COMMENT '圖片放哪裡'
+  `cp` varchar(20) NOT NULL COMMENT 'cp值',
+  `flavor` text NOT NULL COMMENT '風味評價',
+  `jpge_where` varchar(30) NOT NULL COMMENT '圖片放哪裡'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -77,7 +103,7 @@ INSERT INTO `whisky_name` (`id`, `winery_id`, `whiskey_brand`, `price`, `cp`, `f
 
 CREATE TABLE `winery_name` (
   `id` int(10) NOT NULL,
-  `name` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -101,6 +127,18 @@ INSERT INTO `winery_name` (`id`, `name`) VALUES
 --
 
 --
+-- 資料表索引 `poling`
+--
+ALTER TABLE `poling`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `poling_option`
+--
+ALTER TABLE `poling_option`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `user`
 --
 ALTER TABLE `user`
@@ -121,6 +159,18 @@ ALTER TABLE `winery_name`
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `poling`
+--
+ALTER TABLE `poling`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `poling_option`
+--
+ALTER TABLE `poling_option`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user`
