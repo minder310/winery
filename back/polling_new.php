@@ -7,9 +7,9 @@
     </div>
     <div>
         <label for="">啟動</label>
-        <input type="radio" name="on_off" id="">
+        <input type="radio" name="on_off" id="" value="1">
         <label for="">關閉</label>
-        <input type="radio" name="on_off" id="">
+        <input type="radio" name="on_off" id="" value="0">
     </div>
     <div class="opt-div">
         <label for="">選項</label>
