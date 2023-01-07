@@ -63,8 +63,8 @@ function InPutWiskName($TableName, $key, $valu)
     return $num;
 }
 
-// 更新表單資料。要更新的表單，更新資料，條件。PS:條件預設是id。
-function ChangWisk($table, $indata, $where)
+// 更新表單資料。要更新的表單，更新資料，條件，條件。PS:條件預設是id。
+function ChangWisk($table, $indata, $id , $where)
 {
     echo "測試輸出";
     dd($indata);
@@ -82,7 +82,7 @@ function ChangWisk($table, $indata, $where)
         echo "我有跑唷";
         $sql=$sql.$indata;    
     }
-    $sql = $sql . " where `id`='$where'";
+    $sql = $sql . " where `$id`='$where'";
     dd($sql);
     // dd($sql);
     $num=$pdo->exec($sql);
