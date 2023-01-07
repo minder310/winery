@@ -15,12 +15,25 @@ $poling_name[]="poling_name";
 $on_off_name[]="no_off";
 InPutWiskName("poling",$poling_name,$theme);
 InPutWiskName("poling",$on_off_name,$on_off);
+
+// 取出最id最大值。
 $Maxidsql=ReadToTable("MAX(id)","poling");
-dd($Maxidsql);
+// dd($Maxidsql);
 $maxid=ToSql($Maxidsql);
-dd($maxid);
+$bigid[]=$maxid[0]["MAX(id)"];
+dd($bigid);
+
+
 // 宣告要導入的表格。
-$option[]="option_name";
-// 轉換陣列格式。
-InPutWiskName("poling",$option,$maxid[0])
+$option=["poling_id","option_name"];
+
+// 用foretch輸入多組選項，進入投票系統。
+foreach($opt as $key => $value){
+
+    $bigid[1]=$value;
+    dd($bigid);
+    InPutWiskName("poling_option",$option,$bigid);
+    
+}
+// InPutWiskName("poling_option",$option,$bigid)
 ?>
