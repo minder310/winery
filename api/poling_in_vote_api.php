@@ -7,5 +7,22 @@
 <?php
 include_once "../db/db.php";
 $vote=$_POST;
-dd($vote);
+// 以下為取出原投票數。
+$id=$_POST['id'];
+$name=$_POST['option_name'];
+$voteToSql=ReadToTable("*","poling_option","`poling_id`='$id'","`option_name`='$name'");
+$votes=ToSql($voteToSql);
+dd($votes);
+$votes_num=$votes[0]["votes"];
+$votes_id=$votes[0]["id"];
+
+// 取出陣列數值，並進行改變。
+$votes_num++;
+dd($votes_num);
+$indate=['votes'=>$votes_num];
+dd($indate);
+
+// 以下為把數值塞回去。
+ChangWisk("poling_option",$indate,"id","$votes_id")
+// 紀錄票數成功。
 ?>

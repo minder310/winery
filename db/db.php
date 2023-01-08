@@ -58,7 +58,7 @@ function InPutWiskName($TableName, $key, $valu)
         echo "InPutWiskName(表單名稱,欄位(陣列),輸入資料(陣列))";
         echo "請參考詳細用法感恩。";
     }
-    // dd($sql);
+    //  dd($sql);
     $num = $pdo->exec($sql);
     return $num;
 }
@@ -84,7 +84,7 @@ function ChangWisk($table, $indata, $id , $where)
     }
     $sql = $sql . " where `$id`='$where'";
     dd($sql);
-    // dd($sql);
+    //  dd($sql);
     $num=$pdo->exec($sql);
     return $num;
 }
