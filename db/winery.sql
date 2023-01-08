@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-01-04 17:23:11
+-- 產生時間： 2023-01-08 10:08:24
 -- 伺服器版本： 10.4.27-MariaDB
--- PHP 版本： 8.1.12
+-- PHP 版本： 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,13 @@ CREATE TABLE `poling` (
   `no_off` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
+--
+-- 傾印資料表的資料 `poling`
+--
+
+INSERT INTO `poling` (`id`, `poling_name`, `new_date`, `over_date`, `no_off`) VALUES
+(24, '測試', '2023-01-07 18:13:46', '2023-01-07 18:13:46', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -44,8 +51,19 @@ CREATE TABLE `poling` (
 CREATE TABLE `poling_option` (
   `id` int(10) NOT NULL,
   `poling_id` int(10) NOT NULL,
-  `option_name` varchar(50) NOT NULL
+  `option_name` varchar(50) NOT NULL,
+  `votes` int(20) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- 傾印資料表的資料 `poling_option`
+--
+
+INSERT INTO `poling_option` (`id`, `poling_id`, `option_name`, `votes`) VALUES
+(26, 24, '1', 1),
+(27, 24, '2', 0),
+(28, 24, '3', 0),
+(29, 24, '4', 0);
 
 -- --------------------------------------------------------
 
@@ -164,13 +182,13 @@ ALTER TABLE `winery_name`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `poling`
 --
 ALTER TABLE `poling`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `poling_option`
 --
 ALTER TABLE `poling_option`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user`
