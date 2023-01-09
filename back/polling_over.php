@@ -12,6 +12,10 @@ foreach($readSql as $key => $value){
 <tr>
 
     <?php
+    if($_SESSION['vote_over']>0){?>
+        
+    <?php }
+    dd($_SESSION['vote_over']);
     foreach ($readSql as $key => $value) {
     ?>
     <div>

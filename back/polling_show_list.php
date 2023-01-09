@@ -1,6 +1,13 @@
 <h1>顯示投票</h1>
 <?php
 $id = $_GET['id'];
+// // 測試區
+// dd($_SESSION['vote_over']);
+// dd($id);
+if($_SESSION['vote_over']>0){
+    header("location:admin_center.php?do=polling_over&votes_id=$id");
+}
+// // 測試區結束。
 // 取出poling表單中的poling_name。
 $poling_id = ReadToTable("poling_name", "poling", "`id`='$id'");
 $poling_name = ToSql($poling_id);
