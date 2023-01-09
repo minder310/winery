@@ -13,16 +13,18 @@ $name=$_POST['option_name'];
 $voteToSql=ReadToTable("*","poling_option","`poling_id`='$id'","`option_name`='$name'");
 $votes=ToSql($voteToSql);
 dd($votes);
-$votes_num=$votes[0]["votes"];
+$votes_num=$votes[0]["vote"];
 $votes_id=$votes[0]["id"];
 
 // 取出陣列數值，並進行改變。
 $votes_num++;
 dd($votes_num);
-$indate=['votes'=>$votes_num];
+$indate=['vote'=>$votes_num];
 dd($indate);
 
 // 以下為把數值塞回去。
-ChangWisk("poling_option",$indate,"id","$votes_id")
+ChangWisk("poling_option",$indate,"id","$votes_id");
 // 紀錄票數成功。
+
+header("location:../admin_center.php?do=polling_over&votes_id=$id")
 ?>
