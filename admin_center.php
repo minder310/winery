@@ -23,7 +23,7 @@
     // 大標頭部區。
     include "./layouts/header.php";
     ?>
-    <main class="container">
+    <main class="container row">
         <?php
         // 宣告按下去後do帶回來的值。
         if(isset($_GET['do'])){
