@@ -6,25 +6,27 @@ $sql = ReadToTable("*", "poling_option", "`poling_id`={$get['votes_id']}");
 $readSql = (ToSql($sql));
 $sum=0;
 foreach($readSql as $key => $value){
-    $sum+=$value['vote'];
+    $sum+=$value['votes'];
 }
 ?>
 <tr>
 
     <?php
-    if($_SESSION['vote_over']>0){?>
-        
-    <?php }
-    dd($_SESSION['vote_over']);
     foreach ($readSql as $key => $value) {
     ?>
     <div>
         <td><?= $value['option_name']?></td>
-        <td>投票數<?= $value['vote']?></td>
-        <td>占比<?= ($value['vote']/$sum*100)?></td>
+        <td>投票數<?= $value['votes']?></td>
+        <td>占比<?= ($value['votes']/$sum*100)?></td>
     </div>
         
     <?php } ?>
     <tr>總票數</tr>
     <tr><?= $sum ?></tr>
 </tr>
+<script>
+    // 宣告，如果已經投過票會告知投票人，票數不算。
+    <?php if($_SESSION['vote_over']>0){ ?>
+        window.alert("你已經投過票了唷。");
+    <?php } ?>
+</script>
