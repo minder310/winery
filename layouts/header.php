@@ -1,10 +1,10 @@
-<div class="mt-4 p-5 bg-danger text-white rounded">
+<div class="container mt-4 p-5 bg-danger text-white rounded">
     <h1>威士忌介紹</h1>
     <p>介紹經典，與近期好酒</p>
 </div>
 
 <!-- 輪播創建。 -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel" style="height:100ox;">
+<div id="demo" class="container carousel slide" data-bs-ride="carousel" style="height:100ox;">
 
     <!-- Indicators/dots -->
     <div class="carousel-indicators">
