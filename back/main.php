@@ -1,6 +1,7 @@
-<h1>首頁未製作。</h1>
 
-<div class="container mt-3 col-md-12 col-lg-6 col">
+<!-- 包起來讓他也在中間 -->
+
+<div class="mt-3 col-md-12 col-lg-6 col">
   <h2>Card Image</h2>
   <p>Image at the top (card-img-top):</p>
   <div class="card" style="width:400px">
@@ -12,7 +13,7 @@
     </div>
   </div>
 </div>
-<div class="container mt-3 col-md-12 col-lg-6 col">
+<div class="mt-3 col-md-12 col-lg-6 col">
   <h2>Card Image</h2>
   <p>Image at the top (card-img-top):</p>
   <div class="card" style="width:400px">
