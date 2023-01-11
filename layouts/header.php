@@ -39,7 +39,7 @@
 <?php
 if (!$_SESSION['login']) {
 ?>
-    <div class="dropdown row">
+    <div class="dropdown row mx-auto container">
         <button type="button" class="btn btn-link col col-sm-2"><a href="./index.php?do=main">回首頁</a></button>
         <button type="button" class="btn btn-link col col-sm-2"><a href="./index.php?do=login">登入</a></button>
         <button type="button" class="btn btn-link col col-sm-2"><a href="#">討論區</a></button>
@@ -54,7 +54,7 @@ if (!$_SESSION['login']) {
         </ul>
     </div>
 <?php } else { ?>
-    <div class="dropdown row">
+    <div class="dropdown row mx-auto container">
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="./admin_center.php">回首頁</a></button>
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="./logout.php">登出</a></button>
         <button type="button" class="btn btn-link col col-sm-2 "><a  href="#">討論區</a></button>
