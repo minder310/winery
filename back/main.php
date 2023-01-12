@@ -1,31 +1,48 @@
-<!-- 包起來讓他也在中間 -->
+<?php
+  $maxNumber=ToSql(ReadToTable("MAX(id)","whisky_name"));
+  $num=$maxNumber[0]["MAX(id)"];
+  $whisk;
+  for($i=0;$i<3;$i++){
+  $randnum=rand(1,$num);
+  $whisk[]=ReadToTable("*","whisky_name","`id`='$randnum'");
+  }
+  // dd($whisk);
+  $read;
+  for($i=0;$i<3;$i++){
+    $read[]=ToSql($whisk[$i]);
+  }
+  // dd($read);
+  
+  
+  
+?>
   <div class="mt-3 col-md-12 col-lg-4 col row justify-content-center">
     <div class="card" style="width:400px">
-      <img class="card-img-top" src="./jpge/smell.jpg" alt="Card image" style="width:100%">
+      <img  class="card-img-top" src="./upimg/<?= $read[0][0]["jpge_where"]?>" alt="Card image" style="width:261px; height:261px;">
       <div class="card-body">
-        <h4 class="card-title">John Doe</h4>
-        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-        <a href="#" class="btn btn-primary">See Profile</a>
+        <h4 class="card-title"><?= $read[0][0]["whiskey_brand"]?></h4>
+        <p class="card-text">價格:<?= $read[0][0]["price"]?>元</p>
+        <a href="#" class="btn btn-primary">詳細資料</a>
       </div>
     </div>
   </div>
 <div class="mt-3 col-md-12 col-lg-4 col row justify-content-center">
   <div class="card" style="width:400px">
-    <img class="card-img-top" src="./jpge/smell.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="./upimg/<?= $read[1][0]["jpge_where"]?>" alt="Card image" style="width:261px; height:261px;">
     <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-      <a href="#" class="btn btn-primary">See Profile</a>
+      <h4 class="card-title"><?= $read[1][0]["whiskey_brand"]?></h4>
+      <p class="card-text">價格:<?= $read[1][0]["price"]?>元</p>
+      <a href="#" class="btn btn-primary">詳細資料</a>
     </div>
   </div>
 </div>
 <div class="mt-3 col-md-12 col-lg-4 col row justify-content-center">
   <div class="card" style="width:400px">
-    <img class="card-img-top" src="./jpge/smell.jpg" alt="Card image" style="width:100%">
+    <img class="card-img-top" src="./upimg/<?= $read[2][0]["jpge_where"]?>" alt="Card image" style="width:261px ;height:261px;">
     <div class="card-body">
-      <h4 class="card-title">John Doe</h4>
-      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-      <a href="#" class="btn btn-primary">See Profile</a>
+      <h4 class="card-title"><?= $read[2][0]["whiskey_brand"]?></h4>
+      <p class="card-text">價格:<?= $read[2][0]["price"]?>元</p>
+      <a href="#" class="btn btn-primary">詳細資料</a>
     </div>
   </div>
 </div>
