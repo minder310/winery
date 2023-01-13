@@ -73,7 +73,7 @@
 </div>
 
 <!-- 輪播創建。 -->
-<div id="demo" class="container carousel slide" data-bs-ride="carousel" style="height:100ox;">
+<div id="demo" class="container carousel slide p-0" data-bs-ride="carousel" style="height:100ox;">
 
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
