@@ -164,7 +164,7 @@
 <!-- 彈出式視窗結束。 -->
 <?php
 if (isset($_SESSION['bad'])) { ?>
-<div class="alert alert-danger" role="alert">
-    <h1>趕快想起帳號吧!你錯了第<?=$_SESSION['bad']?>次</h1>
+<div class="alert alert-danger mx-auto" role="alert">
+    趕快想起帳號吧!你錯了第<?=$_SESSION['bad']?>次
 </div>
 <?php } ?>
