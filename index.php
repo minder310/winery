@@ -19,7 +19,7 @@
     ?>
 
 
-    <main class="container row">
+    <main class="container row  mx-auto justify-content-center">
         <?php
         // 宣告按下去後do帶回來的值。
         if (isset($_GET['do'])) {
