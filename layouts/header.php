@@ -1,9 +1,3 @@
-<!-- 測試區 -->
-<?php
-if (isset($_SESSION['bad'])) { ?>
-
-<?php } ?>
-<!-- 測試區結束 -->
 <!-- 新版header標 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
@@ -21,15 +15,15 @@ if (isset($_SESSION['bad'])) { ?>
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link" href="./logout.php"> -->
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              <img title="登出" style="width:24px;height:24px" src="./icon/icons8-登录右圆角-96.png">
-            </button>
-            <!-- </a> -->
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./admin_center.php?do=polling_new"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
-          </li>
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <img title="登出" style="width:24px;height:24px" src="./icon/icons8-登录右圆角-96.png">
+              </button>
+              <!-- </a> -->
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./admin_center.php?do=polling_new"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
+            </li>
           <li class="nav-item">
             <a class="nav-link" href="./admin_center.php?do=polling_show"><img title="投票管理" style="width: 24px;height:24px;" src="./icon/icons8-票-96.png" alt=""></a>
           </li>
@@ -40,16 +34,16 @@ if (isset($_SESSION['bad'])) { ?>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php foreach ($alldate as $key => $value) { ?>
                 <li><a class="dropdown-item" href="./admin_center.php?do=show_wisk_list&wisk=<?= ($key + 1) ?>"><?= $value['name'] ?></a></li>
-              <?php } ?>
-              <li><a class="dropdown-item" href="./admin_center.php?do=InTheNewWisk">新增威士忌</a></li>
-            </ul>
-          </li>
-        <?php } else { ?>
-          <!-- 未登入區域 -->
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.php?do=main"><img title="首頁" style="width: 24px; height:24px" src="./icon/icons8-木屋-96.png" alt=""></a>
-          </li>
-          <li class="nav-item">
+                <?php } ?>
+                <li><a class="dropdown-item" href="./admin_center.php?do=InTheNewWisk">新增威士忌</a></li>
+              </ul>
+            </li>
+            <?php } else { ?>
+              <!-- 未登入區域 -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.php?do=main"><img title="首頁" style="width: 24px; height:24px" src="./icon/icons8-木屋-96.png" alt=""></a>
+              </li>
+              <li class="nav-item">
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               <img title="登入" style="width:24px;height:24px" src="./icon/icons8-登录右圆角-96.png">
             </button>
@@ -68,20 +62,20 @@ if (isset($_SESSION['bad'])) { ?>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php foreach ($alldate as $key => $value) { ?>
                 <li><a class="dropdown-item" href="./admin_center.php?do=show_wisk_list&wisk=<?= ($key + 1) ?>"><?= $value['name'] ?></a></li>
-              <?php } ?>
-            </ul>
-          </li>
-        <?php } ?>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<!-- 結束header。 -->
-<div class="container mt-4 p-5 bg-danger text-white rounded">
+                <?php } ?>
+              </ul>
+            </li>
+            <?php } ?>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- 結束header。 -->
+    <div class="container mt-4 p-5 bg-danger text-white rounded">
   <h1>威士忌介紹</h1>
   <p>介紹經典，與近期好酒</p>
 </div>
@@ -121,7 +115,7 @@ if (isset($_SESSION['bad'])) { ?>
 <!-- 輪播程式碼結束。 -->
 
 
-<!-- 登出彈出式葉面。 -->
+<!-- 登出登入彈出式頁面。 -->
 <?php if (isset($_SESSION['login'])) { ?>
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -168,3 +162,9 @@ if (isset($_SESSION['bad'])) { ?>
   </div>
 <?php } ?>
 <!-- 彈出式視窗結束。 -->
+<?php
+if (isset($_SESSION['bad'])) { ?>
+<div class="alert alert-danger" role="alert">
+    <h1>趕快想起帳號吧!你錯了第<?=$_SESSION['bad']?>次</h1>
+</div>
+<?php } ?>
