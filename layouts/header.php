@@ -1,3 +1,9 @@
+<!-- 測試區 -->
+<?php
+if (isset($_SESSION['bad'])) { ?>
+
+<?php } ?>
+<!-- 測試區結束 -->
 <!-- 新版header標 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
@@ -160,5 +166,5 @@
       </div>
     </div>
   </div>
-  <?php } ?>
-  <!-- 彈出式視窗結束。 -->
+<?php } ?>
+<!-- 彈出式視窗結束。 -->

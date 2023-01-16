@@ -24,5 +24,5 @@ if ($user_array>0) {
     } else {
         $_SESSION['bad'] +=1;
     }
-    // header("location:../index.php?do=admin");
+    header("location:../index.php");
 }
