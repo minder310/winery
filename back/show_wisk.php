@@ -17,14 +17,14 @@ $ReadSql = ToSql($sql);
 //  dd($ReadSql);
 ?>
 <!-- 需要新增修改選項。 -->
-<h1 style="text-align: center;"><?= $ReadSql[0]['whiskey_brand'] ?></h1>
-<h3 style="text-align: center;">價格:<?= $ReadSql[0]['price'] ?></h3>
 <div class="row">
     <div class="col-12 col-md-7">
-            <img style="width: 500px;height: 500px;" class="mx-auto" src="./upimg/<?= $ReadSql[0]['jpge_where'] ?>" alt="酒徒">
+        <img style="width: 500px;height: 500px;" class="mx-auto" src="./upimg/<?= $ReadSql[0]['jpge_where'] ?>" alt="酒徒">
     </div>
     <div class="col-12 col-md-7 offset-md-5" style="background-color: #E8900C;margin-top:-100px;">
-        <p class="text-light">
+        <h1 style="text-align: center;" class="pt-5 text-light"><?= $ReadSql[0]['whiskey_brand'] ?></h1>
+        <h3 style="text-align: center;" class="text-light">價格:<?= $ReadSql[0]['price'] ?></h3>
+        <p class="text-light p-5 fs-5 lh-lg">
             <?= $ReadSql[0]['flavor'] ?>
         </p>
     </div>
