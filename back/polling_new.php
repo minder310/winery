@@ -1,22 +1,22 @@
 <h1>投票區</h1>
-    <button name="newinput">新增選項</button>
-<form action="./api/new_poling_api.php" method="POST">
-    <div>
-        <label for="">主題</label>
+        <button class="btn btn-warning w-50 " name="newinput">新增選項</button>
+<form  action="./api/new_poling_api.php" method="POST">
+    <div class="mb-3">
+        <label class="form-label" for="">主題</label>
         <input type="text" name="theme">
     </div>
-    <div>
-        <label for="">啟動</label>
+    <div class="mb-3">
+        <label class="form-label" for="">啟動</label>
         <input type="radio" name="on_off" id="" value="1">
-        <label for="">關閉</label>
+        <label class="form-label" for="">關閉</label>
         <input type="radio" name="on_off" id="" value="0">
     </div>
-    <div class="opt-div">
-        <label for="">選項</label>
+    <div class="opt-div mb-3">
+        <label class="form-label" for="">選項</label>
         <input type="text" name="opt[]">
         <button type="button" id="del">刪除選項</button>
     </div>
-    <div>
+    <div class="mb-3">
         <input type="submit" value="儲存">
         <input type="reset" value="清空">
     </div>

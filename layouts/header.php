@@ -97,7 +97,7 @@
   </div>
 
   <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
+  <div class="carousel-inner rounded-3">
     <div class="carousel-item active">
       <img src="./jpge/01.jpg" alt="Los Angeles" class="d-block" style="width:100%">
     </div>
