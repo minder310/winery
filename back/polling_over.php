@@ -4,6 +4,7 @@
 $get = $_GET;
 $sql = ReadToTable("*", "poling_option", "`poling_id`={$get['votes_id']}");
 $readSql = (ToSql($sql));
+$polingId=$readSql[0]['poling_id'];
 $sum=0;
 foreach($readSql as $key => $value){
     $sum+=$value['votes'];
@@ -26,7 +27,7 @@ foreach($readSql as $key => $value){
 </tr>
 <script>
     // 宣告，如果已經投過票會告知投票人，票數不算。
-    <?php if($_SESSION['vote_over']>0){ ?>
+    <?php if($_SESSION["poling$polingId"]>0){ ?>
         window.alert("你已經投過票了唷。");
     <?php } ?>
 </script>

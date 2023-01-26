@@ -1,4 +1,4 @@
-<div class="w-25 border border-2 rounded-3 border-warning">
+<div class="w-25 border border-2 rounded-3 border-warning my-5">
     <h1 style="text-align: center;">註冊頁面</h1>
     <form action="./api/newl_user_api.php" method="POST">
         <div class="mb-3">

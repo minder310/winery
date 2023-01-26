@@ -24,11 +24,16 @@
             </li> -->
           <!-- 縮減登出列結束。 -->
 
-            <li class="nav-item">
-              <a class="nav-link" href="./admin_center.php?do=polling_new"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
-            </li>
           <li class="nav-item">
-            <a class="nav-link" href="./admin_center.php?do=polling_show"><img title="投票管理" style="width: 24px;height:24px;" src="./icon/icons8-票-96.png" alt=""></a>
+            <a class="nav-link" href="./admin_center.php?do=polling_new"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="poling" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img title="投票管理" style="width: 24px;height:24px;" src="./icon/icons8-票-96.png" alt=""></a>
+            <ul class="dropdown-menu" aria-labelledby="poling">
+              <li><a class="dropdown-item" href="./admin_center.php?do=polling_new">新增投票</a></li>
+              <li><a class="dropdown-item" href="./admin_center.php?do=polling_show">投票</a></li>
+              <li><a class="dropdown-item" href="">投票結果</a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,16 +42,16 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php foreach ($alldate as $key => $value) { ?>
                 <li><a class="dropdown-item" href="./admin_center.php?do=show_wisk_list&wisk=<?= ($key + 1) ?>"><?= $value['name'] ?></a></li>
-                <?php } ?>
-                <li><a class="dropdown-item" href="./admin_center.php?do=InTheNewWisk">新增威士忌</a></li>
-              </ul>
-            </li>
-            <?php } else { ?>
-              <!-- 未登入區域 -->
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.php?do=main"><img title="首頁" style="width: 24px; height:24px" src="./icon/icons8-木屋-96.png" alt=""></a>
-              </li>
-              <!-- <li class="nav-item">
+              <?php } ?>
+              <li><a class="dropdown-item" href="./admin_center.php?do=InTheNewWisk">新增威士忌</a></li>
+            </ul>
+          </li>
+        <?php } else { ?>
+          <!-- 未登入區域 -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.php?do=main"><img title="首頁" style="width: 24px; height:24px" src="./icon/icons8-木屋-96.png" alt=""></a>
+          </li>
+          <!-- <li class="nav-item">
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               <img title="登入" style="width:24px;height:24px" src="./icon/icons8-登录右圆角-96.png">
             </button>
@@ -65,24 +70,24 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php foreach ($alldate as $key => $value) { ?>
                 <li><a class="dropdown-item" href="./admin_center.php?do=show_wisk_list&wisk=<?= ($key + 1) ?>"><?= $value['name'] ?></a></li>
-                <?php } ?>
-              </ul>
-            </li>
-            <?php } ?>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <img title="登出" style="width:24px;height:24px" src="./icon/icons8-登录右圆角-96.png">
-              </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <!-- 結束header。 -->
-    <div class="container mt-4 p-5 text-white rounded" >
-  <h1 class="mt-5" style="color:#E89B27; border-left:solid 16px #E89B27;padding-left:16px;" >威士忌介紹</h1>
+              <?php } ?>
+            </ul>
+          </li>
+        <?php } ?>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <img title="登出" style="width:24px;height:24px" src="./icon/icons8-登录右圆角-96.png">
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- 結束header。 -->
+<div class="container mt-4 p-5 text-white rounded">
+  <h1 class="mt-5" style="color:#E89B27; border-left:solid 16px #E89B27;padding-left:16px;">威士忌介紹</h1>
   <p class="mx-2" style="color:gray;">介紹經典，與近期好酒</p>
 </div>
 
@@ -170,7 +175,7 @@
 <!-- 彈出式視窗結束。 -->
 <?php
 if (isset($_SESSION['bad'])) { ?>
-<div class="alert alert-danger mx-auto w-50">
-    趕快想起帳號吧!你錯了第<?=$_SESSION['bad']?>次
-</div>
+  <div class="alert alert-danger mx-auto w-50">
+    趕快想起帳號吧!你錯了第<?= $_SESSION['bad'] ?>次
+  </div>
 <?php } ?>

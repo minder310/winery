@@ -1,12 +1,12 @@
-<h1>顯示投票</h1>
+
 <?php
 $id = $_GET['id'];
 // // 測試區
 // dd($_SESSION['vote_over']);
 // dd($id);
-if($_SESSION['vote_over']>0){
-    header("location:admin_center.php?do=polling_over&votes_id=$id");
-}
+// if($_SESSION['vote_over']>0){
+//     header("location:admin_center.php?do=polling_over&votes_id=$id");
+// }
 // // 測試區結束。
 // 取出poling表單中的poling_name。
 $poling_id = ReadToTable("poling_name", "poling", "`id`='$id'");
@@ -16,19 +16,44 @@ $poling_list_id = ReadToTable("option_name", "poling_option", "`poling_id`='$id'
 $poling_list = ToSql($poling_list_id);
 ?>
 <!-- 宣告主題，取出主題。 -->
-<h1><?= $poling_name[0]['poling_name'] ?></h1>
+<!-- <h1><?= $poling_name[0]['poling_name'] ?></h1> -->
 <!-- 製作一個投票表格。 -->
-<form action="./api/poling_in_vote_api.php" method="POST">
+<!-- <form action="./api/poling_in_vote_api.php" method="POST">
     <input type="hidden" name="id" value="<?= $id ?>">
     <?php
     foreach ($poling_list as $key => $value) {
     ?>
         <div>
-            <label><?=$value['option_name']?></label>
-            <input type="radio" name="option_name" value="<?=$value['option_name']?>">
+            <label><?= $value['option_name'] ?></label>
+            <input type="radio" name="option_name" value="<?= $value['option_name'] ?>">
         </div>
     <?php
     }
     ?>
     <button>投票</button>
-</form>
+</form> -->
+
+<div class="card col-12 col-md-8 border border-warning mt-5">
+    <form action="./api/poling_in_vote_api.php" method="POST">
+        <div class="card-header row bg-warning">
+            <h1 class="text-center"><?= $poling_name[0]['poling_name'] ?></h1>
+        </div>
+        <img src="" class="card-img-top" alt="">
+        <input type="hidden" name="id" value="<?= $id ?>">
+        <div class="card-body">
+            <?php
+            foreach ($poling_list as $key => $value) {
+            ?>
+                <div class="row mt-2 border border-warning ">
+                    <label class="text-center col-12 col-md-8"><?= $value['option_name'] ?></label>
+                    <input class="col-12 col-md-4 mt-2 " style="height: 11px;" type="radio" name="option_name" value="<?= $value['option_name'] ?>">
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="text-center">
+            <button>投票</button>
+        </div>
+    </form>
+</div>

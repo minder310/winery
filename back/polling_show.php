@@ -1,13 +1,13 @@
-<h1>顯示現有投票。</h1>
+<!-- <h1>顯示現有投票。</h1> -->
 <?php
 // 要顯示的標題跟，內容SQL宣告。
 $sqlPolingName = ReadToTable("*", "poling");
 // 載進SQl中。
 $polingName = ToSql($sqlPolingName);
-dd($polingName);
+// dd($polingName);
 
 ?>
-<table class="table table-striped">
+<table class="table table-striped table-warning">
     <thead>
         <tr>
             <th scope="col"></th>

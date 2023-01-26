@@ -9,7 +9,7 @@ $Winery_name = $pdo->query($sql)->fetchColumn();
 <?php
 $sql = ReadToTable("*", "whisky_name", "winery_id=$wisk_num");
 $ReadSql = ToSql($sql);
-dd($ReadSql);
+// dd($ReadSql);
 ?>
 <!--                  最小尺寸    大於md分成兩格。   paind-0 -->
 <div class="container row-cols-1 row-cols-md-2 row p-0">
@@ -17,7 +17,7 @@ dd($ReadSql);
     <?php if($key==0||$key%2==0){?>
       <div class="card mb-3 col" >
         <div class="row g-0">
-          <div class="col-md-4">
+          <div class="col-md-4 col-12">
             <img style="width: 260px;height: 260px;" src="./upimg/<?=$vaule["jpge_where"]?>" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-8">
