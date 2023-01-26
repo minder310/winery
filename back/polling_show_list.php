@@ -1,4 +1,3 @@
-
 <?php
 $id = $_GET['id'];
 // // 測試區
@@ -15,23 +14,12 @@ $poling_name = ToSql($poling_id);
 $poling_list_id = ReadToTable("option_name", "poling_option", "`poling_id`='$id'");
 $poling_list = ToSql($poling_list_id);
 ?>
-<!-- 宣告主題，取出主題。 -->
-<!-- <h1><?= $poling_name[0]['poling_name'] ?></h1> -->
-<!-- 製作一個投票表格。 -->
-<!-- <form action="./api/poling_in_vote_api.php" method="POST">
-    <input type="hidden" name="id" value="<?= $id ?>">
-    <?php
-    foreach ($poling_list as $key => $value) {
-    ?>
-        <div>
-            <label><?= $value['option_name'] ?></label>
-            <input type="radio" name="option_name" value="<?= $value['option_name'] ?>">
-        </div>
-    <?php
-    }
-    ?>
-    <button>投票</button>
-</form> -->
+
+<!-- 如果投過票自動轉跳區。 -->
+<?php if(isset($_SESSION["poling$id"])){ ?>
+    <meta http-equiv="refresh" content="0;url=./admin_center.php?do=polling_over&votes_id=<?=$id?>">
+<?php } ?>
+<!-- 判斷投過票自動轉跳區結束。 -->
 
 <div class="card col-12 col-md-8 border border-warning mt-5">
     <form action="./api/poling_in_vote_api.php" method="POST">
