@@ -4,7 +4,7 @@
 $sqlPolingName = ReadToTable("*", "poling");
 // 載進SQl中。
 $polingName = ToSql($sqlPolingName);
-dd($polingName);
+// dd($polingName);
 
 ?>
 <table class="table table-striped table-warning">
@@ -24,7 +24,7 @@ dd($polingName);
             <tr>
                 <th scope="row"><?= $value['id'] ?></th>
                 <td>
-                    <a href="./admin_center.php?do=polling_show_list&id=">
+                    <a href="./admin_center.php?do=polling_show_list&id=<?= $value['id'] ?>">
                         <?= $value['poling_name'] ?>
                     </a>
                 </td>
