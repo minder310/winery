@@ -14,6 +14,10 @@
             <label class="form-label col-2 mx-auto" for="">關閉</label>
             <input style="height: 15px;" class="col-1 mt-2 mx-auto" type="radio" name="on_off" id="" value="0">
         </div>
+        <div class="col-mb-3 row">
+            <label  for="">結束時間</label>
+            <input  class="form-control" type="datetime-local" name="over_date">
+        </div>
         <div class="opt-div col-mb-3 row">
             <label class="form-label" for="">選項</label>
             <input class="form-control col-8" type="text" name="opt[]">

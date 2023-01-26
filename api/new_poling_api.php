@@ -5,6 +5,11 @@ $a = $_POST;
 dd($a);
 // 傳主題與是否啟動。
 $theme_onoff = [$_POST['theme'], $_POST['on_off']];
+// 傳結束時間。
+$over_date=$_POST["over_date"];
+dd($over_date);
+$test=explode("T",$over_date);
+dd($test);
 // 傳選項。
 $opt = $_POST['opt'];
 // 宣告要輸入的表單，表格名稱。
