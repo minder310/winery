@@ -25,14 +25,13 @@
           <!-- 縮減登出列結束。 -->
 
           <li class="nav-item">
-            <a class="nav-link" href="./admin_center.php?do=polling_new"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
+            <a class="nav-link" href="#"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="poling" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img title="投票管理" style="width: 24px;height:24px;" src="./icon/icons8-票-96.png" alt=""></a>
             <ul class="dropdown-menu" aria-labelledby="poling">
               <li><a class="dropdown-item" href="./admin_center.php?do=polling_new">新增投票</a></li>
               <li><a class="dropdown-item" href="./admin_center.php?do=polling_show">投票</a></li>
-              <li><a class="dropdown-item" href="">投票結果</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

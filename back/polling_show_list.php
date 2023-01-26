@@ -24,6 +24,7 @@ $poling_list = ToSql($poling_list_id);
 <div class="card col-12 col-md-8 border border-warning mt-5">
     <form action="./api/poling_in_vote_api.php" method="POST">
         <div class="card-header row bg-warning">
+            <!-- 提取出主題並且。 -->
             <h1 class="text-center"><?= $poling_name[0]['poling_name'] ?></h1>
         </div>
         <img src="" class="card-img-top" alt="">
