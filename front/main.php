@@ -21,7 +21,7 @@
       <div class="card-body">
         <h4 class="card-title"><?= $read[0][0]["whiskey_brand"]?></h4>
         <p class="card-text">價格:<?= $read[0][0]["price"]?>元</p>
-        <a href="admin_center.php?do=show_wisk&wisk=<?= $read[0][0]['id']?>" class="btn btn-primary">詳細資料</a>
+        <a href="./index.php?do=show_wisk&wisk=<?= $read[0][0]['id']?>" class="btn btn-primary">詳細資料</a>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
     <div class="card-body">
       <h4 class="card-title"><?= $read[1][0]["whiskey_brand"]?></h4>
       <p class="card-text">價格:<?= $read[1][0]["price"]?>元</p>
-      <a href="admin_center.php?do=show_wisk&wisk=<?= $read[1][0]['id'] ?>" class="btn btn-primary">詳細資料</a>
+      <a href="./index.php?do=show_wisk&wisk=<?= $read[1][0]['id'] ?>" class="btn btn-primary">詳細資料</a>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
     <div class="card-body ">
       <h4 class="card-title"><?= $read[2][0]["whiskey_brand"]?></h4>
       <p class="card-text">價格:<?= $read[2][0]["price"]?>元</p>
-      <a href="admin_center.php?do=show_wisk&wisk=<?= $read[2][0]['id'] ?>" class="btn btn-primary">詳細資料</a>
+      <a href="./index.php?do=show_wisk&wisk=<?= $read[2][0]['id'] ?>" class="btn btn-primary">詳細資料</a>
     </div>
   </div>
 </div>

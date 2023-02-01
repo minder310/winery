@@ -5,7 +5,6 @@ $sqlPolingName = ReadToTable("*", "poling");
 // 載進SQl中。
 $polingName = ToSql($sqlPolingName);
 // dd($polingName);
-dd($polingName);
 ?>
 <table class="table table-striped table-warning">
     <thead>

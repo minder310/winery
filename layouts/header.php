@@ -68,7 +68,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php foreach ($alldate as $key => $value) { ?>
-                <li><a class="dropdown-item" href="./admin_center.php?do=show_wisk_list&wisk=<?= ($key + 1) ?>"><?= $value['name'] ?></a></li>
+                <li><a class="dropdown-item" href="./index.php?do=show_wisk_list&wisk=<?= ($key + 1) ?>"><?= $value['name'] ?></a></li>
               <?php } ?>
             </ul>
           </li>
