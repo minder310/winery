@@ -5,7 +5,7 @@ $sqlPolingName = ReadToTable("*", "poling");
 // 載進SQl中。
 $polingName = ToSql($sqlPolingName);
 // dd($polingName);
-
+dd($polingName);
 ?>
 <table class="table table-striped table-warning">
     <thead>
@@ -20,7 +20,9 @@ $polingName = ToSql($sqlPolingName);
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($polingName as $key => $value) { ?>
+        <?php foreach ($polingName as $key => $value) { 
+            if($value['no_off']==1){
+            ?>
             <tr>
                 <th scope="row"><?= $value['id'] ?></th>
                 <td>
@@ -43,6 +45,6 @@ $polingName = ToSql($sqlPolingName);
                     </td>
                 </form> -->
             </tr>
-        <?php } ?>
+        <?php } } ?>
     </tbody>
 </table>
