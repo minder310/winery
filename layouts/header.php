@@ -60,7 +60,7 @@
             <a class="nav-link" href="./admin_center.php?do=polling_new"><img title="天氣" style="height: 24px;width:24px;" src="./icon/icons8-cloudshot.gif" alt=""></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./admin_center.php?do=polling_show"><img title="投票管理" style="width: 24px;height:24px;" src="./icon/icons8-票-96.png" alt=""></a>
+            <a class="nav-link" href="./index.php?do=polling_show"><img title="投票結果" style="width: 24px;height:24px;" src="./icon/icons8-票-96.png" alt=""></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
