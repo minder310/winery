@@ -1,4 +1,4 @@
-<h1>註冊新帳號API</h1>
+
 <?php
 include_once "../db/db.php";
 
@@ -10,8 +10,10 @@ echo $user;
 echo $pd;
 echo $email;
 echo $name;
-$sql="INSERT INTO `user`(`id`, `user_name`, `user_password`, `email`, `name`) VALUES ('[value-1]','$user','$pd','$email','$name')";
+$sql="INSERT INTO `user`(`user_name`, `user_password`, `email`, `name`) VALUES ('$user','$pd','$email','$name')";
+dd($sql);
 $return=$pdo->exec($sql);
 echo $return;
 // 製作註冊網站完成。
+
 ?>

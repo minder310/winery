@@ -1,6 +1,8 @@
 <?php
 $dsn = "mysql:host=localhost;charset=utf8;dbname=winery";
+// $dsn = "mysql:host=localhost;charset=utf8;dbname=s1110414";
 $pdo = new PDO($dsn, 'root', '');
+// $pdo = new PDO($dsn, 's1110414', 's1110414');
 $sql = "select * from winery_name";
 $alldate = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 date_default_timezone_set("Asia/Taipei");
